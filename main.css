@@ -1,3 +1,4 @@
+/* Basic Setup */
 *,
 *::before,
 *::after {
@@ -11,6 +12,40 @@
     --bg-light: #1a1a1a;
     --text-primary: #ffffff;
     --highlight: #00ffaa;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .container {
+        max-width: 80%;
+    }
+    .about, .services, .contact {
+        padding: 4rem 0; 
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1.2em; 
+    }
+}
+
+/* Mobile Screen */
+@media (max-width: 768px) {
+    .nav-links {
+        font-size: 1.2em; 
+        padding: 2rem 0;
+    }
+    .nav-links a {
+        padding: 1.5rem 0;
+    }
+    .about, .services, .contact {
+        padding: 2rem 0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1em;
+    }
 }
 
 body {
@@ -258,4 +293,29 @@ body {
 .footer p {
     font-size: 1.4rem;
     margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-dark);
+        padding: 2rem 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 1rem 0;
+    }
 }
